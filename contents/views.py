@@ -9,5 +9,8 @@ def abtsharks(request):
     # return HttpResponse("<h1>Hello</h1>")
     return render(request,'contents/abtsharks.html')
 
+def kevinOleary(request):
+    return render(request,'contents/kevinOleary.html')
+
 
 
