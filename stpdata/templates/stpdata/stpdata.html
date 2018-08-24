@@ -1,0 +1,8 @@
+{% extends "contents/header.html" %}
+{% block content %}
+        <h4>    Company Name    --     Industry Type       --         Gender</h4>
+	{% for product in object_list %}
+
+		<h5>{{ product.company }} --{{ product.industry }}-- {{ product.entrepreneur_gender }}</h5>
+	{% endfor %}
+{% endblock %}

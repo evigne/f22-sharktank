@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('contents.urls')),
+    url(r'^products/',include('stpdata.urls'))
 ]
