@@ -11,6 +11,8 @@ def abtsharks(request):
 
 def kevinOleary(request):
     return render(request,'contents/kevinOleary.html')
+def daymondjohn(request):
+    return render(request,'contents/daymondjohn.html')
 
 
 
