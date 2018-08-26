@@ -1,0 +1,11 @@
+{% extends "contents/header.html" %}
+{% block content %}
+{% load staticfiles %}
+
+<a href="/one/"><h1>Season 1</h1></a>
+url(r'^vignsh$',ListView.as_view(queryset=Product.objects.all().filter(season=1,deal='Yes'),template_name="stpdata/stpdata.html")),
+
+
+
+
+{% endblock %}

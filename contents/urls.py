@@ -5,4 +5,5 @@ urlpatterns=[
     url(r'^abtsharks/',views.abtsharks,name='abtsharks'),
     url(r'^shark_six/',views.shark_six,name='SharkSix'),
     url(r'^guests/',views.guests,name='guests'),
+    url(r'^contact/',views.contact,name='contact'),
 ]

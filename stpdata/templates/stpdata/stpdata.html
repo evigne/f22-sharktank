@@ -1,8 +1,70 @@
 {% extends "contents/header.html" %}
 {% block content %}
-        <h4>    Company Name    --     Industry Type       --         Gender</h4>
-	{% for product in object_list %}
+{% load staticfiles %}
 
-		<h5>{{ product.company }} --{{ product.industry }}-- {{ product.entrepreneur_gender }}</h5>
+<script type="text/javascript">
+    function filter() {
+        var season = document.getElementById("season");
+
+        var deal = document.getElementById("deal");
+        var seasonValue = season.value;
+
+        var dealValue = deal.value;
+        var link = `/products?season=${seasonValue}&deal=${dealValue}`;
+        window.location.href = link;
+    }
+</script>
+<style>
+	#overflowTest {
+    background:white;
+    padding: 15px;
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+    <!--border: 1px solid #ccc;-->
+}
+</style>
+<table>
+	<tr>
+		<th>
+	<h4>Seasons</h4><select id="season">
+                <optgroup label="Season">
+                    <option value=1>Season 1</option>
+                    <option value=2>Season 2</option>
+                    <option value=3>Season 3</option>
+                    <option value=4>Season 4</option>
+                    <option value=5>Season 5</option>
+					<option value=6>Season 6</option>
+                </optgroup>
+		</select></th>
+
+	<th>
+<h4>Deal</h4><select id="deal">
+                <optgroup label="Deal">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </optgroup>
+	</select></th>	</tr></table>
+<button type="button" onclick="filter()" class="btn btn-primary" style="float:right;margin-right:65%;margin-top:-50px">Apply</button>
+<br><br>
+<div id="overflowTest" style="margin-bottom: 20px;">
+
+
+
+<table class="table">
+        <!--<tr>-->
+            <!--<th>Comapny</th><th>Industry</th><th>Gender</th><th>Deal</th></tr>-->
+	{% for product in products %}
+
+
+
+        <h5><tr><th>Id:{{ product.id }}</th>
+            <th>Company:<a href="{% url 'stpdata:details_product' pk=product.id %}">{{ product.company }}</a></th>
+            <th>Industry:{{ product.industry }}</th>
+            <th>Gender:{{ product.entrepreneur_gender }}</th>
+            <th>Deal:{{ product.deal }}</th></tr></h5>
 	{% endfor %}
+</table>
+</div>
 {% endblock %}
+
