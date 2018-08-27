@@ -1,9 +1,21 @@
 {% extends "contents/header.html" %}
 {% block content %}
 {% load staticfiles %}
-<h1>Hello</h1>
-{% for product in products %}
-    <h3>{{ product.season }}</h3>
-    <h6>{{ product.industry }}</h6>
-{% endfor %}
+<div style="color:#ffffff">
+    <h1 style="text-align: center; margin-top: 0px; margin-bottom: 0px;">{{ product.company }}</h1
+<dl>
+    <dt></dt>
+
+    <dd><h3>Season:&nbsp;&nbsp;{{ product.season }}</h3></dd>
+    <dd><h3>No.in series:&nbsp;&nbsp;{{ product.episode }}</h3></dd>
+    <dd><h3>Industry:&nbsp;&nbsp;{{ product.industry }}</h3></dd>
+    <dd><h3>Deal:&nbsp;&nbsp;{{ product.deal }}</h3></dd>
+    <dd><h3>Gender:&nbsp;&nbsp;{{ product.entrepreneur_gender }}</h3></dd>
+    <dd><h3>Amount Received:&nbsp;&nbsp;${{ product.amount }}</h3></dd>
+    <dd><h3>Equity:&nbsp;&nbsp;{{ product.equity }}%</h3></dd>
+    <dd><h3>Valuation:&nbsp;&nbsp;${{ product.valuation }}</h3></dd>
+</dl>
+        {{ product.body|safe|linebreaks }}
+</div>
+
 {% endblock %}

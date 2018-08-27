@@ -5,12 +5,12 @@
 <script type="text/javascript">
     function filter() {
         var season = document.getElementById("season");
-
+        var gender = document.getElementById("gender");
         var deal = document.getElementById("deal");
         var seasonValue = season.value;
-
+        var genderValue = gender.value;
         var dealValue = deal.value;
-        var link = `/products?season=${seasonValue}&deal=${dealValue}`;
+        var link = `/stpdata?season=${seasonValue}&gender=${genderValue}&deal=${dealValue}`;
         window.location.href = link;
     }
 </script>
@@ -21,8 +21,11 @@
     width: 100%;
     height: 400px;
     overflow: auto;
-    <!--border: 1px solid #ccc;-->
-}
+    }
+    h4{
+    color:#ffffff;
+    }
+
 </style>
 <table>
 	<tr>
@@ -38,6 +41,15 @@
                 </optgroup>
 		</select></th>
 
+        <th>
+<h4>Gender</h4><select id="gender">
+                <optgroup label="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Mixed Team">Mixed Team</option>
+                </optgroup>
+	</select></th>
+
 	<th>
 <h4>Deal</h4><select id="deal">
                 <optgroup label="Deal">
@@ -48,6 +60,7 @@
 <button type="button" onclick="filter()" class="btn btn-primary" style="float:right;margin-right:65%;margin-top:-50px">Apply</button>
 <br><br>
 <div id="overflowTest" style="margin-bottom: 20px;">
+<h1>Select What you want to see in the drop-list and select apply</h1>
 
 
 
@@ -59,7 +72,7 @@
 
 
         <h5><tr><th>Id:{{ product.id }}</th>
-            <th>Company:<a href="{% url 'stpdata:details_product' pk=product.id %}">{{ product.company }}</a></th>
+            <th>Company:<a href="/stpdata/{{ product.id }}">{{ product.company }}</a></th>
             <th>Industry:{{ product.industry }}</th>
             <th>Gender:{{ product.entrepreneur_gender }}</th>
             <th>Deal:{{ product.deal }}</th></tr></h5>
