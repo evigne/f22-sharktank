@@ -4,12 +4,14 @@ from stpdata.models import Product
 
 
 def products(request):
-    detail(request,1)
-    print("inside products")
-    season = request.GET.get('season')
-    deal = request.GET.get('deal')
-    gender=request.GET.get('gender')
-    products = Product.objects.all().filter(season=season,entrepreneur_gender=gender, deal=deal)
+    params = request.GET
+    filter_params = {}
+    for k, v in params.items():
+        if not v:
+            continue
+        filter_params.update({k:v})
+    products = Product.objects.all().filter(**filter_params)
+
     context = {'products': products}
     return render(request, 'stpdata/stpdata.html', context)
 

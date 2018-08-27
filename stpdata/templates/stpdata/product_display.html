@@ -3,7 +3,15 @@
 {% load staticfiles %}
 <div style="color:#ffffff">
     <h1 style="text-align: center; margin-top: 0px; margin-bottom: 0px;">{{ product.company }}</h1
-<dl>
+
+<table class="table">
+    <tr>
+        <th><h3>Season</h3></th><th><h3>{{ product.season }}</h3></th>
+    </tr>
+</table>
+
+
+    <dl>
     <dt></dt>
 
     <dd><h3>Season:&nbsp;&nbsp;{{ product.season }}</h3></dd>

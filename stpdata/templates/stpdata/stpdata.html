@@ -10,7 +10,7 @@
         var seasonValue = season.value;
         var genderValue = gender.value;
         var dealValue = deal.value;
-        var link = `/stpdata?season=${seasonValue}&gender=${genderValue}&deal=${dealValue}`;
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}`;
         window.location.href = link;
     }
 </script>
@@ -32,6 +32,7 @@
 		<th>
 	<h4>Seasons</h4><select id="season">
                 <optgroup label="Season">
+                    <option selected></option>
                     <option value=1>Season 1</option>
                     <option value=2>Season 2</option>
                     <option value=3>Season 3</option>
@@ -44,6 +45,7 @@
         <th>
 <h4>Gender</h4><select id="gender">
                 <optgroup label="Gender">
+                    <option selected></option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Mixed Team">Mixed Team</option>
@@ -53,19 +55,16 @@
 	<th>
 <h4>Deal</h4><select id="deal">
                 <optgroup label="Deal">
+                    <option selected></option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </optgroup>
 	</select></th>	</tr></table>
 <br>
-<div><button type="button" onclick="filter()" class="btn btn-primary" >Apply</button>
-    <!--style="float:right;margin-right:65%;margin-top:-50px"-->
-</div><br><br>
+<div><button type="button" onclick="filter()" class="btn btn-primary"  style="margin-bottom:20px;">Apply</button>
+
+</div>
 <div id="overflowTest" style="margin-bottom: 20px;">
-<h2>Select What you want to see from the drop-list and select apply</h2>
-
-
-
 <table class="table">
         <!--<tr>-->
             <!--<th>Comapny</th><th>Industry</th><th>Gender</th><th>Deal</th></tr>-->
