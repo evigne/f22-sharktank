@@ -29,6 +29,7 @@
 </style>
 <table>
 	<tr>
+        <th><h4>Filter By:&nbsp;&nbsp;&nbsp;&nbsp;</h4></th>
 		<th>
 	<h4>Seasons</h4><select id="season">
                 <optgroup label="Season">
@@ -65,14 +66,14 @@
 
 </div>
 <div id="overflowTest" style="margin-bottom: 20px;">
+
 <table class="table">
-        <!--<tr>-->
-            <!--<th>Comapny</th><th>Industry</th><th>Gender</th><th>Deal</th></tr>-->
+
 	{% for product in products %}
 
 
 
-        <h5><tr><th>Id:{{ product.id }}</th>
+        <h5><tr><th>Season:{{ product.season}}</th>
             <th>Company:<a href="/stpdata/{{ product.id }}">{{ product.company }}</a></th>
             <th>Industry:{{ product.industry }}</th>
             <th>Gender:{{ product.entrepreneur_gender }}</th>

@@ -1,29 +1,52 @@
 {% extends "contents/header.html" %}
 {% block content %}
 {% load staticfiles %}
-<div style="color:#ffffff">
-    <h1 style="text-align: center; margin-top: 0px; margin-bottom: 0px;">{{ product.company }}</h1
+<style>
+	#overflowTest {
+    background:white;
+    padding: 15px;
+    width: 100%;
+    height: 540px;
+    overflow: auto;
+    }
 
-<table class="table">
-    <tr>
-        <th><h3>Season</h3></th><th><h3>{{ product.season }}</h3></th>
-    </tr>
-</table>
 
+</style>
+
+<div id="overflowTest" style="margin-bottom: 20px;">
+
+<div class="jumbotron">
+    <h2 style="text-align: center; margin-top: 0px; margin-bottom: 0px;">{{ product.company }}</h2
 
     <dl>
     <dt></dt>
 
-    <dd><h3>Season:&nbsp;&nbsp;{{ product.season }}</h3></dd>
-    <dd><h3>No.in series:&nbsp;&nbsp;{{ product.episode }}</h3></dd>
-    <dd><h3>Industry:&nbsp;&nbsp;{{ product.industry }}</h3></dd>
-    <dd><h3>Deal:&nbsp;&nbsp;{{ product.deal }}</h3></dd>
-    <dd><h3>Gender:&nbsp;&nbsp;{{ product.entrepreneur_gender }}</h3></dd>
-    <dd><h3>Amount Received:&nbsp;&nbsp;${{ product.amount }}</h3></dd>
-    <dd><h3>Equity:&nbsp;&nbsp;{{ product.equity }}%</h3></dd>
-    <dd><h3>Valuation:&nbsp;&nbsp;${{ product.valuation }}</h3></dd>
+    <dd><h4>Season:&nbsp;&nbsp;{{ product.season }}</h4></dd>
+    <dd><h4>No.in series:&nbsp;&nbsp;{{ product.episode }}</h4></dd>
+    <dd><h4>Industry:&nbsp;&nbsp;{{ product.industry }}</h4></dd>
+    <dd><h4>Deal:&nbsp;&nbsp;{{ product.deal }}</h4></dd>
+    <dd><h4>Gender:&nbsp;&nbsp;{{ product.entrepreneur_gender }}</h4></dd>
+    <dd><h4>Amount Received:&nbsp;&nbsp;${{ product.amount }}</h4></dd>
+    <dd><h4>Equity:&nbsp;&nbsp;{{ product.equity }}%</h4></dd>
+    <dd><h4>Valuation:&nbsp;&nbsp;${{ product.valuation }}</h4></dd>
+    <dd><h4>Barbara Corcoran Invested?:&nbsp;&nbsp;{{ product.corcoran }}</h4></dd>
+    <dd><h4>Mark Cuban Invested?:&nbsp;&nbsp;{{ product.cuban }}</h4></dd>
 </dl>
-        {{ product.body|safe|linebreaks }}
-</div>
+    <div>
+        <dl>
+    <dt></dt>
 
+
+    <dd><h4>Lori Greiner Invested?:&nbsp;&nbsp;{{ product.greiner }}</h4></dd>
+    <dd><h4>Robert Herjavec Invested?:&nbsp;&nbsp;{{ product.herjavec }}</h4></dd>
+    <dd><h4>Daymond John Invested?:&nbsp;&nbsp;{{ product.john }}</h4></dd>
+    <dd><h4>Kevin O’Leary Invested?:&nbsp;&nbsp;{{ product.olary }}</h4></dd>
+    <dd><h4>Guest Invested?:&nbsp;&nbsp;{{ product.guests }}</h4></dd>
+    <dd><h4>No. Sharks Invested:&nbsp;&nbsp;{{ product.no_of_sharks }}</h4></dd>
+    <dd><h4>Investment Per Shark:&nbsp;&nbsp;${{ product.investPer_shark }}</h4></dd>
+    <dd><h4>Note If Any:&nbsp;&nbsp;{{ product.note }}</h4></dd>
+</dl>
+    </div>
+        {{ product.body|safe|linebreaks }}
+</div></div>
 {% endblock %}
