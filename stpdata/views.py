@@ -13,6 +13,7 @@ def products(request):
     products = Product.objects.all().filter(**filter_params)
 
     context = {'products': products}
+    # print(context)
     return render(request, 'stpdata/stpdata.html', context)
 
 def detail(request, pk=None):
