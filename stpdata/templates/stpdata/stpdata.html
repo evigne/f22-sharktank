@@ -7,10 +7,32 @@
         var season = document.getElementById("season");
         var gender = document.getElementById("gender");
         var deal = document.getElementById("deal");
+        var investor = document.getElementById("investor");
         var seasonValue = season.value;
         var genderValue = gender.value;
         var dealValue = deal.value;
+        var investorVal = investor.value;
+        if (investorVal=='corcoran'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&corcoran=${'True'}`;
+        }else if (investorVal=='cuban'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&cuban=${'True'}`;
+        }else if (investorVal=='greiner'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&greiner=${'True'}`;
+        }else if (investorVal=='herjavec'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&herjavec=${'True'}`;
+        }else if (investorVal=='john'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&john=${'True'}`;
+        }else if (investorVal=='oleary'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&oleary=${'True'}`;
+        }else if (investorVal=='harrington'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&harrington=${'True'}`;
+        }else if (investorVal=='guests'){
+        var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}&guests=${'True'}`;
+        }else{
         var link = `/stpdata?season=${seasonValue}&entrepreneur_gender=${genderValue}&deal=${dealValue}`;
+        }
+        
+
         window.location.href = link;
     }
 </script>
@@ -60,7 +82,20 @@
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </optgroup>
-	</select></th>	</tr></table>
+	</select></th>
+    <th><h4>Investors</h4><select id="investor">
+                <optgroup label="Investors">
+                    <option selected></option>
+                    <option value="corcoran">Barbara Corcoran</option>
+                    <option value="cuban">Mark Cuban</option>
+                    <option value="greiner">Lori Greiner</option>
+                    <option value="herjavec">Robert Herjavec</option>
+                    <option value="john">Daymond John</option>
+                    <option value="oleary">Kevin O'Leary</option>
+                    <option value="harrington">Kevin Harrington</option>
+                    <option value="guests">Guest</option>
+                </optgroup>
+	</select></th></tr></table>
 <br>
 <div><button type="button" onclick="filter()" class="btn btn-primary"  style="margin-bottom:20px;">Apply</button>
 
