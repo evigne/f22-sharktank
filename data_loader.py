@@ -56,7 +56,7 @@ if __name__ == '__main__':
                         row['Company'],
                         row['Industry'],
                         row['Entrepreneur Gender'],
-                        remove_characters(row['Amount']),
+                        remove_characters(row['Amount']) or 0,
                         row['Corcoran'],
                         row['Cuban'],
                         row['Deal'],
